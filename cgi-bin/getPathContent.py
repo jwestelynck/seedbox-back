@@ -15,6 +15,14 @@ rootDir = '/download'
 
 pattern1 = re.compile(rootDir)
 
+def get_size(start_path = '.'):
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(start_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            total_size += os.path.getsize(fp)
+    return total_size
+
 def getPathContent(path):
     result = []
     contents = listdir(path)
@@ -31,7 +39,7 @@ def getPathContent(path):
             dir = {
                     'name':content,
                     'type':'directory',
-                    'size': 0,
+                    'size': self.get_size("{}/{}".format(path,content)),
                     'id': str(base64.b64encode(("{}/{}".format(path,content)).encode("utf-8")), "utf-8"),
                     'content' : getPathContent("{}/{}".format(path,content))
                 }
