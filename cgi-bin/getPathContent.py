@@ -39,7 +39,7 @@ def getPathContent(path):
             dir = {
                     'name':content,
                     'type':'directory',
-                    'size': self.get_size("{}/{}".format(path,content)),
+                    'size': get_size("{}/{}".format(path,content)),
                     'id': str(base64.b64encode(("{}/{}".format(path,content)).encode("utf-8")), "utf-8"),
                     'content' : getPathContent("{}/{}".format(path,content))
                 }
