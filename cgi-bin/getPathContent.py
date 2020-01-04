@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
 import os
@@ -8,7 +8,7 @@ import base64
 import cgi
 import re
 
-hostname = 'kimsuffi1-api.westelynck.fr'
+hostname = 'htpc-api.westelynck.fr'
 
 arguments = cgi.FieldStorage()
 rootDir = '/download'
