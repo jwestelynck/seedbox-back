@@ -41,7 +41,7 @@ def getPathContent(path):
                     'name':content,
                     'type':'directory',
                     'last_modification': os.path.getmtime("{}/{}".format(path,content)),
-                    'size': self.get_size("{}/{}".format(path,content)),
+                    'size': os.path.get_size("{}/{}".format(path,content)),
                     'id': str(base64.b64encode(("{}/{}".format(path,content)).encode("utf-8")), "utf-8"),
                     'content' : getPathContent("{}/{}".format(path,content))
                 }
