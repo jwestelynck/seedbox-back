@@ -32,7 +32,7 @@ def getPathContent(path):
                     'name':content,
                     'type':'file',
                     'last_modification': os.path.getmtime("{}/{}".format(path,content)),
-                    'size': getsize(("{}/{}".format(path,content))),
+                    'size': get_size(("{}/{}".format(path,content))),
                     'id': str(base64.b64encode(("{}/{}".format(path,content)).encode("utf-8")), "utf-8"),
                     'link': 'https://{}{}/{}'.format(hostname,path,content)
                 })
